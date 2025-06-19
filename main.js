@@ -6,7 +6,7 @@ const QUIZ_DATA = {
       videoId: "#vid1", // Corresponds to the ID in <a-assets>
       question: "What is the function of this part?",
       answers: [
-        { text: "Pumping Blood", correct: true },
+        { text: "Pumping Bloody", correct: true },
         { text: "Filtering Air", correct: false },
       ]
     },
