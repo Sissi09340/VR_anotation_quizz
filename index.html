@@ -12,8 +12,8 @@
     <!-- Asset Management System -->
     <a-assets>
       <a-asset-item id="model-glb" src="assets/textured_meshV2.glb"></a-asset-item>
-      <video id="vid2" src="assets/porte.mp4" loop="false" preload="auto"></video>
       <video id="vid1" src="assets/porte.mp4" loop="false" preload="auto"></video>
+      <video id="vid2" src="assets/silence.mp4" loop="false" preload="auto"></video>
       <!-- Add more videos as needed -->
     </a-assets>
 
@@ -47,7 +47,7 @@
     <a-sphere
       class="annotation"
       annotation-handler="id: 1"
-      position="2.5 1 0.5"
+      position="0.8 1 0.5"
       radius="0.3"
       color="tomato"
       shadow>
@@ -56,7 +56,7 @@
     <a-sphere
       class="annotation"
       annotation-handler="id: 2"
-      position="-2.4 1.8 0.4"
+      position="-2.4 1 2"
       radius="0.3"
       color="tomato"
       shadow>
@@ -70,16 +70,16 @@
       <a-text id="question-text" value="Question text goes here" align="center" width="2" position="0 2 0"></a-text>
       <!-- Answer Buttons -->
       <a-plane id="answer-btn-1" class="answer-button" width="0.7" height="0.3" position="-0.5 1.4 0" color="#333">
-        <a-text id="answer-text-1" value="Choice A" align="center" color="white"></a-text>
+        <a-text id="answer-text-1" value="Choice A" align="center" color="black"></a-text>
       </a-plane>
       <a-plane id="answer-btn-2" class="answer-button" width="0.7" height="0.3" position="0.5 1.4 0" color="#333">
-        <a-text id="answer-text-2" value="Choice B" align="center" color="white"></a-text>
+        <a-text id="answer-text-2" value="Choice B" align="center" color="black"></a-text>
       </a-plane>
 
     </a-entity>
 
     <!-- Scoreboard UI -->
-    <a-entity id="scoreboard" position="-0.8 3.5 -1.5" scale = "4 4 24">
+    <a-entity id="scoreboard" position="-2 3.5 1.5" scale = "4 4 24">
         <a-text id="score-text" value="Good: 0 | Bad: 0" color="black" width="2"></a-text>
     </a-entity>
 

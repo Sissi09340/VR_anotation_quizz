@@ -29,18 +29,18 @@ AFRAME.registerComponent('model-material-adjuster', {
 const QUIZ_DATA = {
     1: {
       videoId: "#vid1", // Corresponds to the ID in <a-assets>
-      question: "What is the function of this part?",
+      question: "Quelle manipulation correspond à l'ouverture d'urgence ?",
       answers: [
-        { text: "Pumping Bloody", correct: true },
-        { text: "Filtering Air", correct: false },
+        { text: "Cas 1", correct: true },
+        { text: "Cas 2", correct: false },
       ]
     },
     2: {
       videoId: "#vid2",
-      question: "Which chamber is this?",
+      question: "De quel couleur le numero du siege s'affiche-t-il?",
       answers: [
-        { text: "Left Ventricle", correct: false },
-        { text: "Right Atrium", correct: true },
+        { text: "Blanc", correct: false },
+        { text: "Bleu", correct: true },
       ]
     }
     // Add more questions here with unique IDs
