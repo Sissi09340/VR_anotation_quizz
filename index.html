@@ -7,7 +7,8 @@
 </head>
 
 <body>
-  <a-scene quiz-manager>
+  <a-scene renderer="antialias: true;
+  colorManagement: true; toneMapping:ACESFilmic; exposure:1.5" quiz-manager>
 
     <!-- Asset Management System -->
     <a-assets>
@@ -20,10 +21,10 @@
     <!-- Environment and Lighting -->
     <a-sky color="#ECECEC"></a-sky>
     <!--<a-light type="ambient" color="#BBB" intensity="1"></a-light>-->
-    <a-light type="directional" position="0 -0.4 0.8" intensity="10"></a-light>
+    <a-light type="directional" position="0 -0.4 0.8" intensity="1"></a-light>
 
     <!-- Camera with Gaze-based Cursor (for Cardboard) -->
-    <a-entity id="camera-rig" position="0 1.6 3">
+    <a-entity id="camera-rig" position="0 1.6 5">
         <a-camera>
             <a-cursor
                 fuse="true"
@@ -67,7 +68,7 @@
       <!-- Video Screen -->
       <a-video id="quiz-video" width="1.6" height="0.9" position="0 2.5 0"></a-video>
       <!-- Question Text -->
-      <a-text id="question-text" value="Question text goes here" align="center" width="2" position="0 2 0"></a-text>
+      <a-text id="question-text" value="Question text goes here" align="center" width="2" position="0 1.8 0"></a-text>
       <!-- Answer Buttons -->
       <a-plane id="answer-btn-1" class="answer-button" width="0.7" height="0.3" position="-0.5 1.4 0" color="#333">
         <a-text id="answer-text-1" value="Choice A" align="center" color="black"></a-text>

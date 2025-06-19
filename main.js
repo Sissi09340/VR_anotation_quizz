@@ -37,7 +37,7 @@ const QUIZ_DATA = {
     },
     2: {
       videoId: "#vid2",
-      question: "De quel couleur le numero du siege s'affiche-t-il?",
+      question: "De quelle couleur le numero du siege s'affiche-t-il?",
       answers: [
         { text: "Blanc", correct: false },
         { text: "Bleu", correct: true },
