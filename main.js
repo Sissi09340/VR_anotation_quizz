@@ -31,8 +31,8 @@ const QUIZ_DATA = {
       videoId: "#vid1", // Corresponds to the ID in <a-assets>
       question: "Quelle manipulation correspond a l'ouverture d'urgence ?",
       answers: [
-        { text: "Cas 1", correct: true },
-        { text: "Cas 2", correct: false },
+        { text: "Cas 1", correct: false },
+        { text: "Cas 2", correct: true },
       ]
     },
     2: {
