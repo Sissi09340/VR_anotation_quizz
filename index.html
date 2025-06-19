@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>A-Frame VR Model Annotations</title>
+  <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+  <script src="main.js" defer></script>
+</head>
+
+<body>
+  <a-scene quiz-manager>
+
+    <!-- Asset Management System -->
+    <a-assets>
+      <a-asset-item id="model-glb" src="assets/model.glb"></a-asset-item>
+      <video id="vid1" src="assets/vid1.mp4" loop="false" preload="auto"></video>
+      <video id="vid2" src="assets/vid2.mp4" loop="false" preload="auto"></video>
+      <!-- Add more videos as needed -->
+    </a-assets>
+
+    <!-- Environment and Lighting -->
+    <a-sky color="#ECECEC"></a-sky>
+    <a-light type="ambient" color="#444"></a-light>
+    <a-light type="directional" position="1 1 1" intensity="1.5"></a-light>
+
+    <!-- Camera with Gaze-based Cursor (for Cardboard) -->
+    <a-entity id="camera-rig" position="0 1.6 3">
+        <a-camera>
+            <a-cursor
+                fuse="true"
+                fuse-timeout="1500"
+                animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150"
+                animation__fusing="property: scale; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1500"
+                event-set__mouseenter="_event: mouseenter; color: springgreen"
+                event-set__mouseleave="_event: mouseleave; color: black"
+            ></a-cursor>
+        </a-camera>
+    </a-entity>
+
+    <!-- The 3D Model -->
+    <a-gltf-model id="main-model" src="#model-glb" position="0 1.2 0" scale="1 1 1"></a-gltf-model>
+
+    <!-- Annotations -->
+    <!-- We attach our custom `annotation-handler` component to each -->
+    <!-- The component's data is the unique ID of the question -->
+    <a-sphere
+      class="annotation"
+      annotation-handler="id: 1"
+      position="2.5 1.5 0.5"
+      radius="1"
+      color="tomato"
+      shadow>
+    </a-sphere>
+
+    <a-sphere
+      class="annotation"
+      annotation-handler="id: 2"
+      position="-2.4 1.8 0.4"
+      radius="1"
+      color="tomato"
+      shadow>
+    </a-sphere>
+
+    <!-- Quiz UI Panel (Initially hidden) -->
+    <a-entity id="quiz-panel" position="0 1.6 -1.5" visible="false">
+      <!-- Video Screen -->
+      <a-video id="quiz-video" width="1.6" height="0.9" position="0 2.5 0"></a-video>
+      <!-- Question Text -->
+      <a-text id="question-text" value="Question text goes here" align="center" width="2" position="0 2 0"></a-text>
+      <!-- Answer Buttons -->
+      <a-plane id="answer-btn-1" class="answer-button" width="0.7" height="0.3" position="-0.5 1.4 0" color="#333">
+        <a-text id="answer-text-1" value="Choice A" align="center" color="white"></a-text>
+      </a-plane>
+      <a-plane id="answer-btn-2" class="answer-button" width="0.7" height="0.3" position="0.5 1.4 0" color="#333">
+        <a-text id="answer-text-2" value="Choice B" align="center" color="white"></a-text>
+      </a-plane>
+    </a-entity>
+
+    <!-- Scoreboard UI -->
+    <a-entity id="scoreboard" position="-0.8 3.5 -1.5" scale = "4 4 24">
+        <a-text id="score-text" value="Good: 0 | Bad: 0" color="black" width="2"></a-text>
+    </a-entity>
+
+  </a-scene>
+</body>
+</html>
