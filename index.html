@@ -11,7 +11,7 @@
 
     <!-- Asset Management System -->
     <a-assets>
-      <a-asset-item id="model-glb" src="assets/model.glb"></a-asset-item>
+      <a-asset-item id="model-glb" src="assets/textured_mesh.glb"></a-asset-item>
       <video id="vid1" src="assets/vid1.mp4" loop="false" preload="auto"></video>
       <video id="vid2" src="assets/vid2.mp4" loop="false" preload="auto"></video>
       <!-- Add more videos as needed -->
@@ -19,8 +19,8 @@
 
     <!-- Environment and Lighting -->
     <a-sky color="#ECECEC"></a-sky>
-    <a-light type="ambient" color="#444"></a-light>
-    <a-light type="directional" position="1 1 1" intensity="1.5"></a-light>
+    <a-light type="ambient" color="#BBB" intensity="2"></a-light>
+    <a-light type="directional" position="1 5 1" intensity="5.5"></a-light>
 
     <!-- Camera with Gaze-based Cursor (for Cardboard) -->
     <a-entity id="camera-rig" position="0 1.6 3">
@@ -37,7 +37,7 @@
     </a-entity>
 
     <!-- The 3D Model -->
-    <a-gltf-model id="main-model" src="#model-glb" position="0 1.2 0" scale="1 1 1"></a-gltf-model>
+    <a-gltf-model id="main-model" src="#model-glb" position="0 1.2 0" scale="5 5 5"></a-gltf-model>
 
     <!-- Annotations -->
     <!-- We attach our custom `annotation-handler` component to each -->
