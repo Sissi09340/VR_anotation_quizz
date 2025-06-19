@@ -11,16 +11,16 @@
 
     <!-- Asset Management System -->
     <a-assets>
-      <a-asset-item id="model-glb" src="assets/textured_mesh.glb"></a-asset-item>
-      <video id="vid1" src="assets/vid1.mp4" loop="false" preload="auto"></video>
-      <video id="vid2" src="assets/vid2.mp4" loop="false" preload="auto"></video>
+      <a-asset-item id="model-glb" src="assets/textured_meshV2.glb"></a-asset-item>
+      <video id="vid2" src="assets/porte.mp4" loop="false" preload="auto"></video>
+      <video id="vid1" src="assets/porte.mp4" loop="false" preload="auto"></video>
       <!-- Add more videos as needed -->
     </a-assets>
 
     <!-- Environment and Lighting -->
     <a-sky color="#ECECEC"></a-sky>
-    <a-light type="ambient" color="#BBB" intensity="2"></a-light>
-    <a-light type="directional" position="1 5 1" intensity="5.5"></a-light>
+    <!--<a-light type="ambient" color="#BBB" intensity="1"></a-light>-->
+    <a-light type="directional" position="0 -0.4 0.8" intensity="10"></a-light>
 
     <!-- Camera with Gaze-based Cursor (for Cardboard) -->
     <a-entity id="camera-rig" position="0 1.6 3">
@@ -37,7 +37,9 @@
     </a-entity>
 
     <!-- The 3D Model -->
-    <a-gltf-model id="main-model" src="#model-glb" position="0 1.2 0" scale="5 5 5"></a-gltf-model>
+    <!--<a-gltf-model id="main-model" src="#model-glb" position="0 1.2 0" scale="5 5 5" rot></a-gltf-model>-->
+    <a-gltf-model id="main-model" src="#model-glb" position="0 1.2 0" scale="5 5 5" model-material-adjuster></a-gltf-model>
+
 
     <!-- Annotations -->
     <!-- We attach our custom `annotation-handler` component to each -->
@@ -45,8 +47,8 @@
     <a-sphere
       class="annotation"
       annotation-handler="id: 1"
-      position="2.5 1.5 0.5"
-      radius="1"
+      position="2.5 1 0.5"
+      radius="0.3"
       color="tomato"
       shadow>
     </a-sphere>
@@ -55,13 +57,13 @@
       class="annotation"
       annotation-handler="id: 2"
       position="-2.4 1.8 0.4"
-      radius="1"
+      radius="0.3"
       color="tomato"
       shadow>
     </a-sphere>
 
     <!-- Quiz UI Panel (Initially hidden) -->
-    <a-entity id="quiz-panel" position="0 1.6 -1.5" visible="false">
+    <a-entity id="quiz-panel" position="-0.5 -1.6 4.5" visible="false">
       <!-- Video Screen -->
       <a-video id="quiz-video" width="1.6" height="0.9" position="0 2.5 0"></a-video>
       <!-- Question Text -->
@@ -73,6 +75,7 @@
       <a-plane id="answer-btn-2" class="answer-button" width="0.7" height="0.3" position="0.5 1.4 0" color="#333">
         <a-text id="answer-text-2" value="Choice B" align="center" color="white"></a-text>
       </a-plane>
+
     </a-entity>
 
     <!-- Scoreboard UI -->

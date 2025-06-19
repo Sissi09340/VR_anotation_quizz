@@ -1,5 +1,30 @@
 /* global AFRAME */
+AFRAME.registerComponent('model-material-adjuster', {
+  init: function () {
+    this.el.addEventListener('model-loaded', () => {
+      const model = this.el.getObject3D('mesh');
+      if (!model) { return; }
 
+      model.traverse((node) => {
+        if (node.isMesh) {
+          const material = node.material;
+
+          // Check if the material has an emissive property (common for self-illumination)
+          if (material.emissive) {
+            // Adjust the emissive color and intensity
+           //material.emissive.setRGB(1, 1, 1); // Set emissive color to red
+            material.emissiveIntensity = 1.0; // Set emissive intensity
+            material.needsUpdate = true; // Important to update the material
+          }
+
+          // Depending on the GLTF material setup, you might need to look for
+          // other properties related to self-illumination or emission.
+          // The exact property name and structure can vary.
+        }
+      });
+    });
+  }
+});
 // Data for our quiz questions
 const QUIZ_DATA = {
     1: {
