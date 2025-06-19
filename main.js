@@ -29,7 +29,7 @@ AFRAME.registerComponent('model-material-adjuster', {
 const QUIZ_DATA = {
     1: {
       videoId: "#vid1", // Corresponds to the ID in <a-assets>
-      question: "Quelle manipulation correspond à l'ouverture d'urgence ?",
+      question: "Quelle manipulation correspond a l'ouverture d'urgence ?",
       answers: [
         { text: "Cas 1", correct: true },
         { text: "Cas 2", correct: false },
