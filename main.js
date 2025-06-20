@@ -16,6 +16,11 @@ AFRAME.registerComponent('model-material-adjuster', {
             material.emissiveIntensity = 1.0; // Set emissive intensity
             material.needsUpdate = true; // Important to update the material
           }
+          if (material.specular) {
+            // Modify the specular color
+            material.specular.set('#FDFDFD'); // Set specular color to white
+            material.needsUpdate = true; // Important to update the material
+          }
 
           // Depending on the GLTF material setup, you might need to look for
           // other properties related to self-illumination or emission.
@@ -67,6 +72,7 @@ const QUIZ_DATA = {
         // Optional: Make other annotations less visible
         document.querySelectorAll('.annotation').forEach(el => {
           el.setAttribute('material', 'opacity', 0.3);
+          
         });
       });
     }

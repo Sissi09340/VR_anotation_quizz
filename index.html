@@ -12,16 +12,18 @@
 
     <!-- Asset Management System -->
     <a-assets>
-      <a-asset-item id="model-glb" src="assets/textured_meshV2.glb"></a-asset-item>
+      <a-asset-item id="model-glb" src="assets/textured_meshV9.glb"></a-asset-item>
       <video id="vid1" src="assets/portevoix.mp4" loop="false" preload="auto"></video>
       <video id="vid2" src="assets/silencevoix.mp4" loop="false" preload="auto"></video>
       <!-- Add more videos as needed -->
     </a-assets>
 
     <!-- Environment and Lighting -->
-    <a-sky color="#ECECEC"></a-sky>
+ 
+  
+
     <!--<a-light type="ambient" color="#BBB" intensity="1"></a-light>-->
-    <a-light type="directional" position="0 -0.4 0.8" intensity="1"></a-light>
+    <a-light type="directional" position="0 0 0.8" intensity="1"></a-light>
 
     <!-- Camera with Gaze-based Cursor (for Cardboard) -->
     <a-entity id="camera-rig" position="0 1.6 5">
@@ -37,9 +39,11 @@
         </a-camera>
     </a-entity>
 
+    <a-sky src="/assets/qwantani_afternoon_pureskyV2.jpg"></a-sky>
+
     <!-- The 3D Model -->
-    <!--<a-gltf-model id="main-model" src="#model-glb" position="0 1.2 0" scale="5 5 5" rot></a-gltf-model>-->
-    <a-gltf-model id="main-model" src="#model-glb" position="0 1.2 0" scale="5 5 5" model-material-adjuster></a-gltf-model>
+    <a-gltf-model id="main-model" src="#model-glb" position="0 1.2 0" scale="5 5 5" ></a-gltf-model>
+    <!--<a-gltf-model id="main-model" src="#model-glb" position="0 1.2 0" scale="5 5 5" model-material-adjuster></a-gltf-model>-->
 
 
     <!-- Annotations -->
@@ -50,7 +54,7 @@
       annotation-handler="id: 1"
       position="0.8 1 0.5"
       radius="0.3"
-      color="tomato"
+      color="#FF0000"
       shadow>
     </a-sphere>
 
@@ -59,7 +63,7 @@
       annotation-handler="id: 2"
       position="-2.4 1 2"
       radius="0.3"
-      color="tomato"
+      color="#FF0000""
       shadow>
     </a-sphere>
 
@@ -70,18 +74,18 @@
       <!-- Question Text -->
       <a-text id="question-text" value="Question text goes here" align="center" width="5" position="0 2.1 0"></a-text>
       <!-- Answer Buttons -->
-      <a-plane id="answer-btn-1" class="answer-button" width="1.5" height="0.6" position="-1 1.4 0" color="#333">
-        <a-text id="answer-text-1" value="Choice A" align="center" color="black"></a-text>
+      <a-plane id="answer-btn-1" class="answer-button" width="1.5" height="0.6" position="-1 1.4 0" color="#122A6C">
+        <a-text id="answer-text-1" value="Choice A" align="center" color="#041038"></a-text>
       </a-plane>
-      <a-plane id="answer-btn-2" class="answer-button" width="1.5" height="0.6" position="1 1.4 0" color="#333">
-        <a-text id="answer-text-2" value="Choice B" align="center" color="black"></a-text>
+      <a-plane id="answer-btn-2" class="answer-button" width="1.5" height="0.6" position="1 1.4 0" color="#122A6C">
+        <a-text id="answer-text-2" value="Choice B" align="center" color="#041038"></a-text>
       </a-plane>
 
     </a-entity>
 
     <!-- Scoreboard UI -->
-    <a-entity id="scoreboard" position="-1.8 6 1.5" scale = "4 4 24">
-        <a-text id="score-text" value="Good: 0 | Bad: 0" color="black" width="2"></a-text>
+    <a-entity id="scoreboard" position="-1.8 6.5 1.5" scale = "4 4 24">
+        <a-text id="score-text" value="Good: 0 | Bad: 0" color="#041038" width="2"></a-text>
     </a-entity>
 
   </a-scene>
